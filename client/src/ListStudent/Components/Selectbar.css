@@ -1,0 +1,56 @@
+.Select-bar-container {
+
+    .search-icon {
+        font-size: 24px;
+        /* Tăng kích thước của icon */
+        padding: 15px;
+        /* Thêm khoảng cách xung quanh icon */
+        cursor: pointer;
+        /* Thêm hiệu ứng chuột khi hover */
+        color: #ff4d4d;
+        /* Dịch icon sang phải */
+        margin-left: 300px;
+
+        i {
+            font-size: 50px;
+            /* Đảm bảo kích thước icon lớn hơn */
+            height: auto;
+        }
+    }
+
+    .message-container {
+        display: flex;
+
+        .message {
+            /* background: red; */
+            width: 50%;
+            margin-left: 250px;
+            font-size: 30px;
+            letter-spacing: 1px;
+            /* Tăng khoảng cách giữa các chữ để đẹp hơn */
+            text-transform: capitalize;
+            color: #2C3E50;
+            margin-top: 30px;
+        }
+
+        .conservation {
+            background: blue;
+            width: 50%;
+
+
+        }
+
+    }
+
+
+
+
+    .history-chat {
+        background: yellow;
+    }
+
+
+
+
+
+}

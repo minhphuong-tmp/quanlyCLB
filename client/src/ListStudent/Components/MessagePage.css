@@ -1,0 +1,29 @@
+.conversation-item {
+    font-size: 18px;
+    /* Tăng kích thước chữ cho tên người dùng và tin nhắn cuối cùng */
+    font-weight: bold;
+    color: #2C3E50;
+    /* Màu tối cho tên người dùng */
+    margin-bottom: 8px;
+    /* Khoảng cách dưới giữa các cuộc trò chuyện */
+
+}
+
+.conversation-item p {
+    font-size: 16px;
+    /* Kích thước chữ nhỏ hơn cho tin nhắn cuối cùng */
+    color: #7F8C8D;
+    /* Màu xám cho tin nhắn cuối cùng */
+    margin-left: 50px;
+
+}
+
+/* Thêm khoảng cách và kiểu cho các phần tử trong cuộc trò chuyện */
+.conversation-item strong {
+    font-size: 20px;
+    /* Tăng kích thước chữ cho tên người dùng */
+    color: #3498db;
+    /* Màu xanh cho tên người dùng */
+    text-transform: capitalize;
+    /* Chữ cái đầu tiên của tên người dùng viết hoa */
+}
