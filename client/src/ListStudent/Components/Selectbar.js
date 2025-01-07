@@ -27,7 +27,7 @@ class Selectbar extends Component {
 
         this.socketConnection.on('connect', () => {
             console.log("Socket connection established:", this.socketConnection);
-            this.props.setSocketConnection(this.socketConnection);  // Dispatch kết nối socket vào Redux
+            this.props.setSocketConnection(this.socketConnection);  
         });
     }
 
@@ -64,21 +64,16 @@ class Selectbar extends Component {
             <div className="Select-bar-container">
                 <div className="search-icon" title='add friend' onClick={this.toggleSearchUser}>
                     <i className="fa-solid fa-magnifying-glass"></i>
+
                 </div>
-                <div className="message-container">
-                    <div className="message">Cuộc trò chuyện</div>
-                    <div className="conservation">Tin nhắn</div>
+
+                <div className='search-user'>
+                    {openSearchUser && <SearchUser onClose={this.toggleSearchUser} onUserSelect={onUserSelect} />}  
                 </div>
-                {/* <div className="history-chat">
-                    History chat
-                </div> */}
 
-                {/* *search user */}
-                {openSearchUser && <SearchUser onClose={this.toggleSearchUser} onUserSelect={onUserSelect} />}
-
-
-
+                
             </div>
+            
         );
     }
 }
@@ -89,3 +84,4 @@ const mapDispatchToProps = {
 };
 
 export default connect(null, mapDispatchToProps)(Selectbar);
+

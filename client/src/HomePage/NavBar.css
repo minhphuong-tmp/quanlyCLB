@@ -16,7 +16,7 @@
   left: 0;
   width: 80px;
   height: 100%;
-  background-color: rgb(236, 139, 122);
+  background-color: rgb(237, 46, 43);
   padding: 6px 14px;
   transition: all 0.5s ease;
 }
@@ -113,12 +113,12 @@
 }
 
 .home {
-  background: rgb(236, 139, 122);
-  border-radius: 10px;
+  background: rgb(176, 23, 23);
+  border-radius: 12px;
 }
 
 .home1 {
-  background: rgb(236, 139, 122);
+  background: rgb(176, 23, 23);
 }
 
 .sidebar li a:hover {
@@ -203,7 +203,7 @@
 }
 
 #title {
-  color: rgb(236, 139, 122);
+  color: rgb(237, 46, 43);
   text-shadow: 1px 1px #11101d;
   transition: all 0.5s ease;
   font-size: 6rem;
@@ -273,7 +273,7 @@
 
 .alert {
   padding: 20px;
-  background-color: rgb(236, 139, 122);
+  background-color: rgb(237, 46, 43);
   color: white;
   max-width: 1000px;
   margin-left: auto;
@@ -285,7 +285,7 @@
 
 #main .alert:hover {
   cursor: pointer;
-  box-shadow: 1px 1px 1px rgb(236, 139, 122);
+  box-shadow: 1px 1px 1px rgb(237, 46, 43);
   background-color: rgb(236, 139, 122);
 }
 
@@ -366,7 +366,7 @@
   display: inline;
   font-size: 4rem;
   line-height: 5rem;
-  color: rgb(236, 139, 122);
+  color: rgb(237, 46, 43);
   font-weight: bold;
   text-shadow: 2px 5px 8px rgba(0, 0, 0, 0.3);
 }
@@ -390,7 +390,7 @@
 #_footer1 {
   font-size: 3rem;
   line-height: 3.2rem;
-  color: rgb(236, 139, 122);
+  color: rgb(237, 46, 43);
   text-align: center;
   transition: all 0.5 ease;
   margin-bottom: 30px;
@@ -415,7 +415,7 @@
 
 .footer_icons {
   /* display: inline; */
-  color: rgb(236, 139, 122);
+  color: rgb(237, 46, 43);
   float: left;
   /* margin-top: -2.8rem; */
   text-align: center;
@@ -515,7 +515,7 @@
 }
 
 .notiManagement {
-  background-color: rgb(236, 139, 122);
+  background-color: rgb(237, 46, 43);
   margin-bottom: 30px;
   padding: 10px;
   max-width: 550px;

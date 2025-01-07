@@ -106,10 +106,12 @@ class SearchUser extends Component {
                 style={{
                     display: "flex",
                     alignItems: "center",
+                    width: "100%",
                     gap: "12px",
                     padding: "8px",
                     paddingTop: "16px",
                     paddingBottom: "16px",
+                    backgroundColor: "white",
                     border: "1px solid transparent",
                     borderBottom: "1px solid #E2E8F0",
                     borderRadius: "4px",
@@ -141,11 +143,11 @@ class SearchUser extends Component {
         const { onClose } = this.props;
 
         return (
-            <div>
+            <div className="search-user-container">
                 <input
+                    className="input-search"
                     type="text"
                     placeholder="Tìm kiếm tên người dùng"
-                    className="input-custom"
                     onChange={this.handleInputChange}
                     value={search}
                 />
@@ -158,16 +160,10 @@ class SearchUser extends Component {
 
                     searchUser.map((user) => this.renderUserCard(user))}
 
-
-
-                <div className="close-search" onClick={onClose}>
-                    <button>
-                        <i className="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
             </div>
         );
     }
 }
 
 export default SearchUser;
+

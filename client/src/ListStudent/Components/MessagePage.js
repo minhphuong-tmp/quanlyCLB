@@ -8,6 +8,8 @@ import { useHistory } from 'react-router-dom';
 import { setSocketConnection } from "../../redux/userSlice"
 import moment from "moment/moment";
 import "./MessagePage.css"
+import { BiFontSize } from "react-icons/bi";
+import { RiFontSize } from "react-icons/ri";
 class MessagePage extends Component {
     constructor(props) {
         super(props);
@@ -19,7 +21,7 @@ class MessagePage extends Component {
                 _id: ""
             },
             message: {
-                text: "",
+                text: "", 
 
             },
             allMessages: [],
@@ -214,53 +216,76 @@ class MessagePage extends Component {
         const { socketConnection, } = this.props;
 
         return (
-            <div className="w-full bg-red-500">
+            <div className="chat-page">
 
+                <div className="user-search-bar">
                 <Selectbar onUserSelect={(_id) => this.setState({ paramusername: _id })} />
 
                 {/* Hiển thị username nếu có */}
+                </div>
 
-
-                <div>
-                    <p>Username: {dataUser.username || "No username selected"}</p>
-
-
-
+                <div className="username">
+                    <p>{dataUser.username || "No username selected"}</p>
 
                 </div>
 
-                <section>
+                <div className="conversation-wrapper">
+                            
+                     <div className="conversation-list">
+                    {conversationUserData && conversationUserData.map((conversation, index) => (
+                        <div key={index} className="conversation-item" >
+                            {/* //onClick={() => this.handleUsernameClick(conversation.userDetails.username)} */}
+                            <p>
+                                <strong>{conversation.userDetails.username}: </strong>
+                                {conversation.lastMessage ? conversation.lastMessage : "No messages yet"}
+                            </p>
+                        </div>
+                    ))}
+                     </div>
+
+             
+
+
                     {/* Hiển thị tất cả tin nhắn */}
 
-                    <div className="messages">
+                    <div className="messages-container">
                         {allMessages.map((msg, index) => {
                             // Kiểm tra nếu msg.msgByUserId === userId2 trong sessionStorage
                             let messageStyle = {}; // Khởi tạo style mặc định cho tin nhắn
-                            let timeStyle = {};    // Khởi tạo style mặc định cho thời gian
+                            let timeStyle = {color: '#fff'};    // Khởi tạo style mặc định cho thời gian
 
                             // Kiểm tra xem tin nhắn là của người gửi hay không
                             if (msg.msgByUserId === sessionStorage.getItem("userId2")) {
                                 // Nếu là người gửi, dịch sang phải
-                                messageStyle = { textAlign: 'right' };
-                                timeStyle = { textAlign: 'right' };
+                                messageStyle = { textAlign: 'right', margin: '4px' };
+                                timeStyle = { 
+                                    textAlign: 'right', 
+                                    color: '#c5c5c5', margin: '4px'
+                                    
+                                };
                             } else {
                                 // Nếu không phải người gửi, dịch sang trái
-                                messageStyle = { textAlign: 'left' };
-                                timeStyle = { textAlign: 'left' };
+                                messageStyle = { textAlign: 'left', margin: '4px' };
+                                timeStyle = {textAlign: 'left', color: '#c5c5c5', margin: '4px'};
                             }
 
                             return (
                                 <div key={index}
                                     className="message"
                                     style={{
+                                        maxWidth: '40%',
+                                        width: 'fit-content',
                                         maxHeight: '400px',
                                         overflowY: 'auto',
-                                        padding: '10px',
-                                        backgroundColor: '#f9f9f9',
+                                        padding: '6px',
+                                        paddingRight: '24px',
+                                        paddingLeft: '24px',
+                                        margin: '4px',
+                                        backgroundColor: msg.msgByUserId === sessionStorage.getItem("userId2") ? '#3498db' : '#f9f9f9',
                                         border: '1px solid #ccc',
-                                        borderRadius: '8px',
-                                        marginLeft: msg.msgByUserId === sessionStorage.getItem("userId2") ? 'auto' : '0', // Căn phải nếu là người gửi
-                                        marginRight: msg.msgByUserId !== sessionStorage.getItem("userId2") ? 'auto' : '0', // Căn trái nếu không phải người gửi
+                                        borderRadius: '32px',
+                                        marginLeft: msg.msgByUserId === sessionStorage.getItem("userId2") ? 'auto' : '20px', // Căn phải nếu là người gửi
+                                        marginRight: msg.msgByUserId !== sessionStorage.getItem("userId2") ? 'auto' : '20px', // Căn trái nếu không phải người gửi
                                     }}>
 
                                     {/* Áp dụng style cho tin nhắn */}
@@ -274,48 +299,29 @@ class MessagePage extends Component {
                         })}
 
                     </div>
-                </section>
+                </div>
 
                 <section>
+                    <div className="texting-box">
 
-                    <div>
-                        {conversationUserData && conversationUserData.map((conversation, index) => (
-                            <div key={index} className="conversation-item" >
-                                {/* //onClick={() => this.handleUsernameClick(conversation.userDetails.username)} */}
-                                <p>
-                                    <strong>{conversation.userDetails.username}:</strong>
-                                    {conversation.lastMessage ? conversation.lastMessage : "No messages yet"}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-
-                </section>
-
-
-
-                <section>
-                    {/* Gửi tin nhắn */}
-                    send message
-                    <form onSubmit={this.handleSendMessage}>
+                    {/* Gửi tin nhắn
+                    send message */}
+                        <form onSubmit={this.handleSendMessage}>
 
                         <input
                             type='text'
-                            placeholder="Gửi tin nhắn ở đây"
+                            placeholder="Message..."
                             value={this.state.message.text}
-
                             onChange={this.handleOnChange}
                         >
-
                         </input>
 
                         <button>
                             <i class="fa-solid fa-paper-plane"></i>
                         </button>
+                        </form>        
+                    </div>
 
-
-
-                    </form>
                 </section>
 
 

@@ -34,17 +34,17 @@ class UserSearchCard extends Component {
                     
                 }}
                 style={{
-                    display: "flex", // flex container
-                    alignItems: "center", // căn giữa theo chiều dọc
-                    gap: "12px", // khoảng cách giữa các phần tử
-                    padding: "8px", // padding nhỏ
-                    paddingTop: "16px", // padding trên cho màn hình lớn
+                    display: "flex", 
+                    alignItems: "center",
+                    gap: "12px", 
+                    padding: "8px",
+                    paddingTop: "16px",
                     paddingBottom: "16px",
-                    border: "1px solid transparent", // đường viền trong suốt
-                    borderBottom: "1px solid #E2E8F0", // đường viền dưới màu slate-200
-                    borderRadius: "4px", // bo tròn góc
-                    cursor: "pointer", // con trỏ khi hover
-                    transition: "border-color 0.2s ease", // hiệu ứng chuyển đổi
+                    border: "1px solid transparent", 
+                    borderBottom: "1px solid #E2E8F0",
+                    borderRadius: "4px",
+                    cursor: "pointer", 
+                    transition: "border-color 0.2s ease",
                 }}
             >
                 <div>

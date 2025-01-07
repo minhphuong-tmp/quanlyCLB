@@ -1,24 +1,13 @@
-.input-custom {
+.search-user-container .input-search {
     width: 100%;
-    /* Tương đương w-full */
-    outline: none;
-    /* Tương đương outline-none */
-    padding-top: 0.25rem;
-    /* Tương đương py-1 (trên dưới 4px) */
-    padding-bottom: 0.25rem;
-    height: 100%;
-    /* Tương đương h-full */
-    padding-left: 1rem;
-    /* Tương đương px-4 (trái phải 16px) */
-    padding-right: 1rem;
 }
 
 .search-show {
     text-align: center;
-    background: white;
+    background: rgb(255, 255, 255);
     color: #64748b;
     margin-top: 2;
     width: full;
-    padding: 4;
+    padding: 4px;
 
 }

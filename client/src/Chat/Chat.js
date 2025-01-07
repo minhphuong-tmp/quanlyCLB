@@ -40,12 +40,13 @@ class Chat extends Component {
 
     render() {
         return (
-            <div className='w-full bg-red-500'>
-
+            <div className='chat-page'>
+                
                 <Selectbar />
 
-
+            
             </div>
+
 
         )
 
